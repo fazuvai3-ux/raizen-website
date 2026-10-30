@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="RAIZEN — Play, Compete, Win. Discover gaming, free tournaments and digital entertainment.">
+
+  <title>RAIZEN | Play • Compete • Win</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #070b18;
+      color: #ffffff;
+      line-height: 1.7;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8%;
+      border-bottom: 1px solid #202b49;
+      background: #090e20;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #35baff;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #c5cce0;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #35baff;
+    }
+
+    .hero {
+      min-height: 570px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        radial-gradient(ellipse at 50% 40%, #172c60 0%, #0b1126 45%, #070b18 75%);
+    }
+
+    .tag {
+      color: #51c8ff;
+      border: 1px solid #276caa;
+      border-radius: 30px;
+      padding: 8px 18px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 9vw, 90px);
+      font-weight: 900;
+      letter-spacing: 7px;
+      background: linear-gradient(90deg, #ffffff, #45c5ff, #9b70ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero h2 {
+      font-size: 18px;
+      letter-spacing: 7px;
+      color: #b8c5e5;
+      margin: 10px 0 20px;
+    }
+
+    .hero p {
+      max-width: 580px;
+      color: #aab5d0;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 30px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #168cff, #7955ff);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 25px #246cff55;
+    }
+
+    section {
+      padding: 75px 8%;
+      text-align: center;
+      scroll-margin-top: 20px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: #9daac7;
+      margin-bottom: 38px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #101a32;
+      border: 1px solid #263d68;
+      border-radius: 14px;
+      padding: 30px 22px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #39baff;
+      box-shadow: 0 0 25px #168cff22;
+    }
+
+    .card .symbol {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .card p {
+      color: #aab5d0;
+      font-size: 14px;
+    }
+
+    .about {
+      background: #0b1225;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      color: #aab5d0;
+    }
+
+    .pricing {
+      background: #0b1225;
+    }
+
+    .pricing-info {
+      max-width: 750px;
+      margin: auto;
+      padding: 30px;
+      background: #101a32;
+      border: 1px solid #263d68;
+      border-radius: 14px;
+    }
+
+    .pricing-info p {
+      color: #b9c5df;
+      margin-bottom: 12px;
+    }
+
+    .pricing-info p:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact a {
+      color: #55bdff;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 30px 8%;
+      text-align: center;
+      border-top: 1px solid #202b49;
+      color: #8997b5;
+      font-size: 13px;
+    }
+
+    footer p {
+      margin-bottom: 12px;
+    }
+
+    footer a {
+      color: #55bdff;
+      text-decoration: none;
+      margin: 5px 8px;
+      display: inline-block;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 650px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero h2 {
+        letter-spacing: 4px;
+        font-size: 14px;
+      }
+
+      .section-title {
+        font-size: 27px;
+      }
+
+      .pricing-info {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">RAI<span>ZEN</span></div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Content Info</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="tag">WELCOME TO THE RAIZEN COMMUNITY</div>
+
+      <h1>RAIZEN</h1>
+
+      <h2>PLAY • COMPETE • WIN</h2>
+
+      <p>
+        Discover gaming, free tournaments and digital entertainment
+        in one growing community.
+      </p>
+
+      <a class="button" href="#about">EXPLORE RAIZEN</a>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features">
+      <h2 class="section-title">Explore RAIZEN</h2>
+
+      <p class="section-subtitle">
+        A community built around gaming and entertainment.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="symbol">🎮</div>
+          <h3>Gaming Community</h3>
+          <p>
+            Connect with gaming enthusiasts and explore
+            the community.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="symbol">🏆</div>
+          <h3>Tournaments</h3>
+          <p>
+            Discover tournament information and
+            competition updates.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="symbol">🎬</div>
+          <h3>Entertainment</h3>
+          <p>
+            Explore digital entertainment and
+            available content.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="symbol">👤</div>
+          <h3>Your Profile</h3>
+          <p>
+            Manage your profile and stay connected
+            with RAIZEN.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+      <h2 class="section-title">About RAIZEN</h2>
+
+      <p>
+        RAIZEN is a digital platform focused on gaming,
+        community activities and digital entertainment.
+        Users can explore free gaming tournaments and
+        access digital entertainment content where
+        distribution rights are available.
+        Our platform aims to provide a simple and
+        user-friendly experience.
+      </p>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+      <h2 class="section-title">Our Services</h2>
+
+      <p class="section-subtitle">
+        Explore the services available on RAIZEN.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="symbol">🎮</div>
+          <h3>Gaming Community</h3>
+          <p>
+            Join our gaming community, connect with players
+            and enjoy exciting gaming activities.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="symbol">🏆</div>
+          <h3>Free Tournaments</h3>
+          <p>
+            Participate in free gaming tournaments,
+            compete with players and win exciting prizes.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="symbol">🎬</div>
+          <h3>Digital Entertainment</h3>
+          <p>
+            Discover original and licensed gaming dramas
+            and entertainment series.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTENT INFORMATION SECTION -->
+    <section class="pricing" id="pricing">
+      <h2 class="section-title">Content & Pricing Information</h2>
+
+      <p class="section-subtitle">
+        Clear information about RAIZEN entertainment content.
+      </p>
+
+      <div class="pricing-info">
+
+        <p>
+          RAIZEN plans to offer digital entertainment content,
+          including original and properly licensed dramas
+          and series.
+        </p>
+
+        <p>
+          Content availability and applicable prices will
+          be clearly displayed before users make a purchase.
+        </p>
+
+        <p>
+          Access to digital content will be subject to the
+          applicable content terms and usage rights.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+      <h2 class="section-title">Contact & Support</h2>
+
+      <p class="section-subtitle">
+        For enquiries and support, contact the official RAIZEN team.
+      </p>
+
+      <p>
+        Email:
+        <a href="mailto:raizenofficialteam@gmail.com">
+          raizenofficialteam@gmail.com
+        </a>
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>© 2026 RAIZEN. All rights reserved.</p>
+
+    <p>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="refund.html">Refund & Cancellation Policy</a>
+    </p>
+
+  </footer>
+
+</body>
+</html>
